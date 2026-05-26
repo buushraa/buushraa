@@ -60,27 +60,17 @@ Education 🎓
 `Linear Programming` · `Optimization` · `Graph Theory` · `Statistics`
 
 ---
-## Languages 🌐
-Language	Proficiency
-English 	C1
-French    B2 
-Arabic    Native language
+### Languages 🌐
+
+| Language      | Proficiency                                                               |
+| ------------- | ------------------------------------------------------------------------- |
+| English       | C1                                                                        |
+| French        | B2                                                                        |
+| Arabic        | Native language                                                           |
 
 ## 🚀 Featured Project
 
-### 🗺️ Spatial BI & ETL — Theft Incident Analysis, Commune Hydra
 
-> End-to-end Spatial Business Intelligence project analyzing theft incidents in the Hydra commune (Algiers).
-
-**What I built:**
-- ✅ Star schema data warehouse with **PostgreSQL/PostGIS** (facts + 3 dimensions)
-- ✅ Full **ETL pipeline** with Talend Open Studio loading 30 geo-located incidents from CSV
-- ✅ **9 spatial KPIs** computed with Python/Pandas (total cost, hotspot areas, theft types)
-- ✅ **ArcMap** visualizations + interactive **Folium/Leaflet.js** webmap
-
-**Stack:** `Python` `PostgreSQL` `PostGIS` `Talend` `ArcMap` `Folium` `Pandas` `SQL` `SOLAP`
-
----
 
 ## 📈 GitHub Stats
 
