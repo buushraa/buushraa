@@ -60,6 +60,11 @@ Education 🎓
 `Linear Programming` · `Optimization` · `Graph Theory` · `Statistics`
 
 ---
+## Languages 🌐
+Language	Proficiency
+English 	C1
+French    B2 
+Arabic    Native language
 
 ## 🚀 Featured Project
 
