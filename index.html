@@ -1,1 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechat Bouchra — Big Data Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2230;
+    --border: #21293a;
+    --blue: #4fa3e0;
+    --blue-dim: #2d6da8;
+    --blue-glow: rgba(79,163,224,0.15);
+    --text: #e6edf3;
+    --muted: #7d8fa8;
+    --accent: #58a6ff;
+  }
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 60px;
+    background: rgba(13,17,23,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.2rem;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--muted);
+    font-size: 0.875rem; font-weight: 500;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 5rem 2rem 4rem;
+    background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(58,110,165,0.18) 0%, transparent 70%);
+    position: relative;
+  }
+  .avatar {
+    width: 88px; height: 88px; border-radius: 50%;
+    background: linear-gradient(135deg, #4fa3e0, #2d6da8);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff;
+    margin-bottom: 1.75rem;
+    box-shadow: 0 0 0 4px rgba(79,163,224,0.2);
+  }
+  #hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800; letter-spacing: -1px;
+    margin-bottom: .5rem;
+  }
+  .hero-sub {
+    color: var(--muted); font-size: 1rem; margin-bottom: .6rem;
+  }
+  .hero-loc {
+    color: var(--muted); font-size: .85rem;
+    display: flex; align-items: center; justify-content: center; gap: .4rem;
+    margin-bottom: 1.75rem;
+  }
+  .tags {
+    display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center;
+    margin-bottom: 2.2rem;
+  }
+  .tag {
+    border: 1px solid var(--blue-dim);
+    color: var(--accent); font-size: .8rem; padding: .3rem .8rem;
+    border-radius: 999px; background: var(--blue-glow);
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    padding: .65rem 1.4rem; border-radius: 8px; font-size: .875rem; font-weight: 500;
+    cursor: pointer; text-decoration: none; transition: all .2s;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .btn-outline {
+    border: 1px solid var(--border); color: var(--text); background: transparent;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-ghost {
+    border: 1px solid var(--border); color: var(--muted); background: transparent;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: var(--muted); }
+  .scroll-arrow {
+    position: absolute; bottom: 2rem;
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--border); background: var(--surface);
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    color: var(--muted); transition: all .2s;
+    animation: bounce 2s infinite;
+  }
+  .scroll-arrow:hover { border-color: var(--accent); color: var(--accent); }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 2rem; max-width: 860px; margin: 0 auto; }
+  .section-title {
+    display: flex; align-items: center; gap: .7rem;
+    font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700;
+    margin-bottom: 2.5rem; color: var(--text);
+  }
+  .section-icon { color: var(--accent); font-size: 1.2rem; }
+
+  /* ── ABOUT ── */
+  #about p {
+    color: #c9d1db; line-height: 1.8; font-size: 1rem; font-weight: 300;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color .2s;
+  }
+  .edu-card:hover { border-color: var(--blue-dim); }
+  .edu-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--surface2); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .edu-info h3 { font-size: .95rem; font-weight: 600; margin-bottom: .25rem; }
+  .edu-info p { color: var(--muted); font-size: .82rem; }
+  .edu-info .year { color: var(--accent); font-size: .8rem; margin-top: .2rem; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .skill-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem;
+    transition: border-color .2s;
+  }
+  .skill-card:hover { border-color: var(--blue-dim); }
+  .skill-cat {
+    color: var(--accent); font-size: .7rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: .9rem;
+  }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .skill-pill {
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--text); font-size: .78rem; padding: .25rem .65rem;
+    border-radius: 6px;
+  }
+
+  /* ── PROJECTS ── */
+  .project-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.75rem;
+    transition: border-color .2s;
+  }
+  .project-card:hover { border-color: var(--blue-dim); }
+  .proj-badge {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .75rem; color: var(--accent); background: var(--blue-glow);
+    border: 1px solid var(--blue-dim); padding: .2rem .7rem;
+    border-radius: 999px; margin-bottom: 1rem;
+  }
+  .proj-title-row {
+    display: flex; align-items: center; gap: .9rem; margin-bottom: .9rem;
+  }
+  .proj-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--surface2); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+  }
+  .proj-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; }
+  .proj-desc { color: #b0bbc9; font-size: .875rem; line-height: 1.7; margin-bottom: 1rem; }
+  .proj-checks { list-style: none; margin-bottom: 1.25rem; }
+  .proj-checks li {
+    display: flex; align-items: flex-start; gap: .6rem;
+    color: #b0bbc9; font-size: .82rem; line-height: 1.6; margin-bottom: .4rem;
+  }
+  .check { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .proj-tag {
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--muted); font-size: .75rem; padding: .2rem .6rem; border-radius: 6px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .contact-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.1rem 1.25rem;
+    display: flex; align-items: center; gap: .9rem;
+    transition: border-color .2s;
+    text-decoration: none; color: var(--text);
+  }
+  .contact-card:hover { border-color: var(--blue-dim); }
+  .contact-icon { color: var(--accent); font-size: 1.1rem; flex-shrink: 0; }
+  .contact-info label { display: block; color: var(--muted); font-size: .72rem; margin-bottom: .2rem; }
+  .contact-info span { font-size: .85rem; font-weight: 500; }
+
+  footer {
+    text-align: center; padding: 2rem; color: var(--muted); font-size: .8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── ANIMATE ── */
+  .fade-in {
+    opacity: 0; transform: translateY(22px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">MB.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="avatar">MB</div>
+  <h1>Mechat Bouchra</h1>
+  <p class="hero-sub">Big Data Analytics Student · Data Science Enthusiast</p>
+  <p class="hero-loc">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    USTHB University, Algiers, Algeria
+  </p>
+  <div class="tags">
+    <span class="tag">Big Data</span>
+    <span class="tag">Machine Learning</span>
+    <span class="tag">Data Analysis</span>
+    <span class="tag">Operational Research</span>
+    <span class="tag">GIS / Spatial BI</span>
+    <span class="tag">ETL</span>
+  </div>
+  <div class="hero-btns">
+    <a href="#projects" class="btn btn-outline">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+      View Projects
+    </a>
+    <a href="#contact" class="btn btn-ghost">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Contact Me
+    </a>
+  </div>
+  <a href="#about" class="scroll-arrow">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <div class="section-title">
+    <span class="section-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </span>
+    About me
+  </div>
+  <p>I am a Master's student in Big Data Analytics at USTHB University, Algeria, with a solid foundation in Applied Mathematics and Operational Research. I am passionate about transforming large-scale data into meaningful insights that drive decision-making. My background combines mathematical rigor with modern data engineering, GIS, and machine learning techniques — making me a versatile profile across the full data value chain.</p>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="fade-in">
+  <div class="section-title">
+    <span class="section-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    </span>
+    Education
+  </div>
+
+  <div class="edu-card">
+    <div class="edu-icon">📊</div>
+    <div class="edu-info">
+      <h3>Master in Big Data Analytics</h3>
+      <p>USTHB University · Algiers, Algeria</p>
+      <p class="year">2024 – 2026 (M1 completed)</p>
+    </div>
+  </div>
+
+  <div class="edu-card">
+    <div class="edu-icon">√x</div>
+    <div class="edu-info">
+      <h3>Bachelor in Applied Mathematics – Operational Research</h3>
+      <p>USTHB University · Algiers, Algeria</p>
+      <p class="year">Graduated 2024</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade-in">
+  <div class="section-title">
+    <span class="section-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+    </span>
+    Skills
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-cat">Programming</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">R</span>
+        <span class="skill-pill">Java (OOP)</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">Big Data & Databases</div>
+      <div class="skill-pills">
+        <span class="skill-pill">PostgreSQL</span>
+        <span class="skill-pill">PostGIS</span>
+        <span class="skill-pill">Hadoop</span>
+        <span class="skill-pill">Spark</span>
+        <span class="skill-pill">NoSQL</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">ETL & Data Warehousing</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Talend Open Studio</span>
+        <span class="skill-pill">Star Schema</span>
+        <span class="skill-pill">SOLAP</span>
+        <span class="skill-pill">pgAdmin</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">GIS & Visualization</div>
+      <div class="skill-pills">
+        <span class="skill-pill">ArcMap</span>
+        <span class="skill-pill">Folium</span>
+        <span class="skill-pill">Leaflet.js</span>
+        <span class="skill-pill">Webmapping</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">Data Science</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Pandas</span>
+        <span class="skill-pill">NumPy</span>
+        <span class="skill-pill">Machine Learning</span>
+        <span class="skill-pill">KPI Analysis</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">Mathematics</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Linear Programming</span>
+        <span class="skill-pill">Optimization</span>
+        <span class="skill-pill">Graph Theory</span>
+        <span class="skill-pill">Statistics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+  <div class="section-title">
+    <span class="section-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+    </span>
+    Projects
+  </div>
+
+  <div class="project-card">
+    <div class="proj-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      GIS · Spatial BI
+    </div>
+    <div class="proj-title-row">
+      <div class="proj-icon">🗺️</div>
+      <div class="proj-title">Spatial BI & ETL — Theft Incident Analysis, Commune Hydra</div>
+    </div>
+    <p class="proj-desc">End-to-end Spatial Business Intelligence project analyzing theft incidents in the Hydra commune (Algiers). Built a full ETL pipeline, geographic data warehouse, and interactive webmap.</p>
+    <ul class="proj-checks">
+      <li>
+        <svg class="check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Designed a star schema data warehouse (PostgreSQL/PostGIS) with 4 tables: facts + 3 dimensions
+      </li>
+      <li>
+        <svg class="check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Built an ETL job with Talend Open Studio to load 30 geo-located incidents from CSV
+      </li>
+      <li>
+        <svg class="check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Computed 9 spatial KPIs (total cost, hotspot areas, dominant theft type) using Python/Pandas
+      </li>
+      <li>
+        <svg class="check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Produced ArcMap visualizations with proportional symbology and a Folium/Leaflet.js webmap
+      </li>
+    </ul>
+    <div class="proj-tags">
+      <span class="proj-tag">Python</span>
+      <span class="proj-tag">PostgreSQL</span>
+      <span class="proj-tag">PostGIS</span>
+      <span class="proj-tag">Talend</span>
+      <span class="proj-tag">ArcMap</span>
+      <span class="proj-tag">Folium</span>
+      <span class="proj-tag">Pandas</span>
+      <span class="proj-tag">SQL</span>
+      <span class="proj-tag">SOLAP</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+  <div class="section-title">
+    <span class="section-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </span>
+    Contact
+  </div>
+  <div class="contact-grid">
+    <a href="mailto:your@email.com" class="contact-card">
+      <span class="contact-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </span>
+      <div class="contact-info">
+        <label>Email</label>
+        <span>your@email.com</span>
+      </div>
+    </a>
+    <a href="https://linkedin.com/in/mechat" target="_blank" class="contact-card">
+      <span class="contact-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </span>
+      <div class="contact-info">
+        <label>LinkedIn</label>
+        <span>linkedin.com/in/mechat</span>
+      </div>
+    </a>
+    <a href="https://github.com/mechat" target="_blank" class="contact-card">
+      <span class="contact-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </span>
+      <div class="contact-info">
+        <label>GitHub</label>
+        <span>github.com/mechat</span>
+      </div>
+    </a>
+    <div class="contact-card">
+      <span class="contact-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <div class="contact-info">
+        <label>Location</label>
+        <span>Algiers, Algeria</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Mechat Bouchra · Big Data Analytics</footer>
+
+<script>
+  // Scroll-triggered fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
