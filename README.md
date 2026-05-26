@@ -4,7 +4,7 @@
 
 **Big Data Analytics Student · Data Science Enthusiast**  
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-buushraa.github.io-4fa3e0?style=for-the-badge)](https://buushraa.github.io)
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-buushraa.github.io-4fa3e0?style=for-the-badge)](https://buushraa.github.io/buushraa/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/mechat-bouchra)
 [![GitHub](https://img.shields.io/badge/GitHub-buushraa-181717?style=for-the-badge&logo=github)](https://github.com/buushraa)
 
@@ -31,15 +31,16 @@ Education 🎓
 ### 👨‍💻 Programming
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
+![PLSQL](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=plsql&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=java&logoColor=white)
 
 ### 🗄️ Big Data & Databases
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![PostGIS](https://img.shields.io/badge/PostGIS-336791?style=flat-square&logo=postgresql&logoColor=white)
-![Hadoop](https://img.shields.io/badge/Hadoop-66CCFF?style=flat-square&logo=apachehadoop&logoColor=black)
+![Oracle](https://img.shields.io/badge/Hadoop-66CCFF?style=flat-square&logo=apachehadoop&logoColor=black)
 ![Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
 ![NoSQL](https://img.shields.io/badge/NoSQL-4DB33D?style=flat-square&logo=mongodb&logoColor=white)
+ ![](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white) ![](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white)](https://github.com/SUKHMAN-SINGH-1612)
 
 ### 🔄 ETL & Data Warehousing
 ![Talend](https://img.shields.io/badge/Talend_Open_Studio-FF6D00?style=flat-square&logo=talend&logoColor=white)
@@ -90,7 +91,7 @@ Education 🎓
 
 | 📧 Email | 💼 LinkedIn | 🌐 Portfolio |
 |----------|-------------|--------------|
-| mechatbouchra@email.com | [mechat-bouchra](https://linkedin.com/in/mechat-bouchra) | [buushraa.github.io](https://buushraa.github.io) |
+| mechatbouchra@email.com | [mechat-bouchra](https://linkedin.com/in/mechat-bouchra) | [buushraa.github.io](https://buushraa.github.io/buushraa/) |
 
 </div>
 
