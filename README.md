@@ -19,7 +19,7 @@ I'm a Master's student in **Big Data Analytics**, with a foundation in **Applied
 I'm passionate about transforming large-scale data into meaningful insights that drive decision-making.  
 My background combines **mathematical rigor** with modern **data engineering**, **GIS**, and **machine learning** — making me a versatile profile across the full data value chain.
 
-Education 🎓
+## Education 🎓
 -  **M1** — Big Data Analytics @ USTHB (2024–2026)
 - **Bachelor** — Applied Mathematics & Operational Research @ USTHB (2024)
 
@@ -37,25 +37,19 @@ Education 🎓
 ### 🗄️ Big Data & Databases
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![PostGIS](https://img.shields.io/badge/PostGIS-336791?style=flat-square&logo=postgresql&logoColor=white)
-![Oracle](https://img.shields.io/badge/Hadoop-66CCFF?style=flat-square&logo=apachehadoop&logoColor=black)
-![Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
 ![NoSQL](https://img.shields.io/badge/NoSQL-4DB33D?style=flat-square&logo=mongodb&logoColor=white)
- ![](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white) ![](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white)](https://github.com/SUKHMAN-SINGH-1612)
-
-### 🔄 ETL & Data Warehousing
+ ![](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white)]
 ![Talend](https://img.shields.io/badge/Talend_Open_Studio-FF6D00?style=flat-square&logo=talend&logoColor=white)
 ![pgAdmin](https://img.shields.io/badge/pgAdmin-316192?style=flat-square&logo=postgresql&logoColor=white)
-`Star Schema` · `SOLAP` · `Data Warehouse`
+
 
 ### 🗺️ GIS & Visualization
 ![ArcGIS](https://img.shields.io/badge/ArcMap-2C7AC3?style=flat-square&logo=esri&logoColor=white)
-![Folium](https://img.shields.io/badge/Folium-77B829?style=flat-square&logo=python&logoColor=white)
-![Leaflet](https://img.shields.io/badge/Leaflet.js-199900?style=flat-square&logo=leaflet&logoColor=white)
 
 ### 📊 Data Science
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/Machine_Learning-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+
 
 ### 📐 Mathematics
 `Linear Programming` · `Optimization` · `Graph Theory` · `Statistics`
