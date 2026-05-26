@@ -90,7 +90,7 @@ Education 🎓
 
 | 📧 Email | 💼 LinkedIn | 🌐 Portfolio |
 |----------|-------------|--------------|
-| your@email.com | [mechat-bouchra](https://linkedin.com/in/mechat-bouchra) | [buushraa.github.io](https://buushraa.github.io) |
+| mechatbouchra@email.com | [mechat-bouchra](https://linkedin.com/in/mechat-bouchra) | [buushraa.github.io](https://buushraa.github.io) |
 
 </div>
 
